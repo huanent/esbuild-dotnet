@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Esbuild.Native.linux_x64</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageId>Esbuild.Native.linux-x64</PackageId>
+    <Version>0.21.2</Version>
+    <Authors>pilotair</Authors>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../packages/linux-x64/bin/esbuild" Pack="true"
+      PackagePath="runtimes/linux-x64/native/" />
+      <None Include="../packages/linux-x64/README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+</Project>

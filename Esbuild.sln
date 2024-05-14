@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esbuild.Native.osx-arm64", "Esbuild.Native.osx-arm64\Esbuild.Native.osx-arm64.csproj", "{B5DBEA8F-A98A-4FA9-B7D9-987016ADF230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esbuild.Native.linux-x64", "Esbuild.Native.linux-x64\Esbuild.Native.linux-x64.csproj", "{83E43850-3EDC-4BDB-8B7A-337EBBF1D04A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5DBEA8F-A98A-4FA9-B7D9-987016ADF230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5DBEA8F-A98A-4FA9-B7D9-987016ADF230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5DBEA8F-A98A-4FA9-B7D9-987016ADF230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5DBEA8F-A98A-4FA9-B7D9-987016ADF230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83E43850-3EDC-4BDB-8B7A-337EBBF1D04A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83E43850-3EDC-4BDB-8B7A-337EBBF1D04A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83E43850-3EDC-4BDB-8B7A-337EBBF1D04A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83E43850-3EDC-4BDB-8B7A-337EBBF1D04A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
