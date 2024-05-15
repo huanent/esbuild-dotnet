@@ -8,7 +8,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageId>Esbuild.Native.osx-arm64</PackageId>
     <Version>0.21.2</Version>
-    <Authors>pilotair</Authors>
+    <Authors>huanent</Authors>
   </PropertyGroup>
   <ItemGroup>
     <None Include="../packages/darwin-arm64/package/bin/esbuild" Pack="true"

@@ -3,10 +3,14 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageId>Esbuild</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>huanent</Authors>
   </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Esbuild.Native.linux-x64" Version="0.21.2" />
-    <PackageReference Include="Esbuild.Native.osx-arm64" Version="0.21.2" />
+    <None Include="../README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
