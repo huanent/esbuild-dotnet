@@ -1,16 +1,19 @@
 namespace EsbuildTest;
 
 [TestClass]
-public class EsbuildTest
+public class BundlerTest
 {
     [TestMethod]
     public async Task TransformAsync()
     {
-        var result = await Esbuild.Esbuild.TransformAsync("""
+        var result = await Esbuild.Bundler.TransformAsync("""
         function foo():string{
-            return "bar"
+          return "bar"
         }
-        """);
+        """, new Esbuild.TransformOptions
+        {
+            Loader = Esbuild.Loader.Ts
+        });
         Assert.AreEqual(result, "function foo() {\n  return \"bar\";\n}\n");
     }
 }

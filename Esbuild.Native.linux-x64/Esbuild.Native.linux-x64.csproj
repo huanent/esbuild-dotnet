@@ -11,8 +11,8 @@
     <Authors>pilotair</Authors>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="../packages/linux-x64/bin/esbuild" Pack="true"
+    <None Include="../packages/linux-x64/package/bin/esbuild" Pack="true"
       PackagePath="runtimes/linux-x64/native/" />
-      <None Include="../packages/linux-x64/README.md" Pack="true" PackagePath="\"/>
+    <None Include="../packages/linux-x64/package/README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
