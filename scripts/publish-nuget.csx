@@ -1,16 +1,18 @@
 #load "common.csx"
 using static Common;
 
-foreach (var package in Packages)
+var packages = Packages.Values.ToList();
+packages.Add("Esbuild");
+
+foreach (var package in packages)
 {
     try
     {
-        PublishPackage("Esbuild");
-        PublishPackage(package.Value);
+        PublishPackage(package);
     }
-    catch (System.Exception)
+    catch (Exception)
     {
-        Console.WriteLine($"publish {package.Key} error");
+        WriteLine($"publish {package} error");
         throw;
     }
 }
