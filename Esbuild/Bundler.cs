@@ -6,13 +6,14 @@ namespace Esbuild;
 public static class Bundler
 {
     private static readonly string bin;
-    private static readonly string binFileName = "esbuild";
+    private static readonly string binFileName;
     private static readonly string rid = RuntimeInformation.RuntimeIdentifier;
     static Bundler()
     {
+        binFileName = rid.StartsWith("win-") ? "esbuild.exe" : "esbuild";
         bin = Path.Combine(AppContext.BaseDirectory, binFileName);
         if (File.Exists(bin)) return;
-        bin = Path.Combine(AppContext.BaseDirectory, "runtimes", rid, "native", "esbuild");
+        bin = Path.Combine(AppContext.BaseDirectory, "runtimes", rid, "native", binFileName);
         if (!File.Exists(bin))
         {
             throw new ExecutableNotFoundException();

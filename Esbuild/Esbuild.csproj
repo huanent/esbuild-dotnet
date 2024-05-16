@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageId>Esbuild</PackageId>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <Authors>huanent</Authors>
   </PropertyGroup>
 
