@@ -2,17 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>Esbuild.Native.osx_arm64</RootNamespace>
+    <RootNamespace>Esbuild.Native.linux_arm64</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageId>Esbuild.Native.osx-arm64</PackageId>
+    <PackageId>Esbuild.Native.linux-arm64</PackageId>
     <Version>0.21.3</Version>
     <Authors>huanent</Authors>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="../packages/darwin-arm64/package/bin/esbuild" Pack="true"
-      PackagePath="runtimes/osx-arm64/native/" />
-    <None Include="../packages/darwin-arm64/package/README.md" Pack="true" PackagePath="/" />
+    <None Include="../packages/linux-arm64/package/bin/esbuild" Pack="true"
+      PackagePath="runtimes/linux-arm64/native/" />
+    <None Include="../packages/linux-arm64/package/README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
