@@ -1,0 +1,48 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "dotnet: build"
+		},
+		{
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"script",
+				"./publish-binding-nuget.csx",
+				"${input:nuget_key}"
+			],
+			"label": "publish binding nuget",
+			"options": {
+				"cwd": "${workspaceFolder}/scripts"
+			}
+		},
+		{
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"script",
+				"./publish-native-nuget.csx",
+				"${input:nuget_key}"
+			],
+			"label": "publish native nuget",
+			"options": {
+				"cwd": "${workspaceFolder}/scripts"
+			}
+		},
+	],
+	"inputs": [
+		{
+			"id": "nuget_key",
+			"description": "nuget key",
+			"type": "promptString"
+		},
+	]
+}

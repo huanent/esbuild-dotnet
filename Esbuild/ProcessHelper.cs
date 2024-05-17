@@ -22,6 +22,7 @@ internal class ProcessHelper
             result = await process.StandardOutput.ReadToEndAsync(token);
         }
 
+        await process.WaitForExitAsync(token);
         if (process.ExitCode == 0) return result;
         using var standardError = process.StandardError;
         var error = await standardError.ReadToEndAsync(token);
@@ -47,6 +48,7 @@ internal class ProcessHelper
             result = process.StandardOutput.ReadToEnd();
         }
 
+        process.WaitForExit();
         if (process.ExitCode == 0) return result;
         using var standardError = process.StandardError;
         var error = standardError.ReadToEnd();
