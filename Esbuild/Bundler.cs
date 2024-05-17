@@ -23,13 +23,12 @@ public static class Bundler
     public static async Task<string> TransformAsync(string code, TransformOptions? options = null, CancellationToken token = default)
     {
         var arguments = options?.ToArguments();
-        try
-        {
-            return await ProcessHelper.RunAsync(bin, arguments?.ToArray(), code, token);
-        }
-        catch (EsbuildException ex)
-        {
-            throw new TransformException(ex.Message);
-        }
+        return await ProcessHelper.RunAsync(bin, arguments?.ToArray(), code, token);
+    }
+
+    public static string Transform(string code, TransformOptions? options = null)
+    {
+        var arguments = options?.ToArguments();
+        return ProcessHelper.Run(bin, arguments?.ToArray(), code);
     }
 }

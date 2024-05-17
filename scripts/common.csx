@@ -11,4 +11,27 @@ public static class Common
     public static string BasePath => Path.GetFullPath("../");
 
     public static string PackagePath => Path.GetFullPath("../packages");
+
+    public static void PublishPackage(string project, string key)
+    {
+        var projectPath = Path.Combine(BasePath, project);
+        var binPath = Path.Combine(projectPath, "bin");
+        var objPath = Path.Combine(projectPath, "obj");
+        if (Directory.Exists(binPath)) Directory.Delete(binPath, true);
+        if (Directory.Exists(objPath)) Directory.Delete(objPath, true);
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = "dotnet",
+            Arguments = $"pack",
+            WorkingDirectory = projectPath
+        }).WaitForExit();
+        var nupkgPath = Directory.GetFiles(projectPath, "*.nupkg", SearchOption.AllDirectories).First();
+
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = "dotnet",
+            Arguments = $"nuget push {nupkgPath} --api-key {key} --source https://api.nuget.org/v3/index.json",
+            WorkingDirectory = projectPath
+        }).WaitForExit();
+    }
 }
