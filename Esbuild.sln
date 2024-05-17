@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esbuild", "Esbuild\Esbuild.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsbuildTest", "EsbuildTest\EsbuildTest.csproj", "{689DBECE-C2AD-4FF9-BDCE-01B6005C9CFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esbuild.Native.linux-arm64", "Esbuild.Native.linux-arm64\Esbuild.Native.linux-arm64.csproj", "{23B8A1EF-0B97-40FC-9E2A-DF2D1D9C5A1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esbuild.Native.osx-x64", "Esbuild.Native.osx-x64\Esbuild.Native.osx-x64.csproj", "{9F62CD63-4C8E-4935-87E5-54E6CABC7120}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esbuild.Native.win-x64", "Esbuild.Native.win-x64\Esbuild.Native.win-x64.csproj", "{E21472B5-A8C2-49D1-B682-5AA506339434}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +42,17 @@ Global
 		{689DBECE-C2AD-4FF9-BDCE-01B6005C9CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{689DBECE-C2AD-4FF9-BDCE-01B6005C9CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{689DBECE-C2AD-4FF9-BDCE-01B6005C9CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23B8A1EF-0B97-40FC-9E2A-DF2D1D9C5A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B8A1EF-0B97-40FC-9E2A-DF2D1D9C5A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B8A1EF-0B97-40FC-9E2A-DF2D1D9C5A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B8A1EF-0B97-40FC-9E2A-DF2D1D9C5A1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F62CD63-4C8E-4935-87E5-54E6CABC7120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F62CD63-4C8E-4935-87E5-54E6CABC7120}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F62CD63-4C8E-4935-87E5-54E6CABC7120}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F62CD63-4C8E-4935-87E5-54E6CABC7120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E21472B5-A8C2-49D1-B682-5AA506339434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E21472B5-A8C2-49D1-B682-5AA506339434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E21472B5-A8C2-49D1-B682-5AA506339434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E21472B5-A8C2-49D1-B682-5AA506339434}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

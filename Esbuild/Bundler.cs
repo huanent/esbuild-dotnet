@@ -22,38 +22,14 @@ public static class Bundler
 
     public static async Task<string> TransformAsync(string code, TransformOptions? options = null, CancellationToken token = default)
     {
-        using var process = new Process();
-        process.StartInfo.FileName = bin;
-        process.StartInfo.CreateNoWindow = true;
-        process.StartInfo.UseShellExecute = false;
-        process.StartInfo.RedirectStandardOutput = true;
-        process.StartInfo.RedirectStandardInput = true;
-        process.StartInfo.RedirectStandardError = true;
-
-        if (options != default)
+        var arguments = options?.ToArguments();
+        try
         {
-            var arguments = options.ToArguments();
-            foreach (var item in arguments)
-            {
-                process.StartInfo.ArgumentList.Add(item);
-            }
+            return await ProcessHelper.RunAsync(bin, arguments?.ToArray(), code, token);
         }
-
-        process.Start();
-
-        using (process.StandardInput)
+        catch (EsbuildException ex)
         {
-            await process.StandardInput.WriteAsync(code);
+            throw new TransformException(ex.Message);
         }
-
-        var result = await process.StandardOutput.ReadToEndAsync(token);
-        process.StandardOutput.Close();
-        if (string.IsNullOrWhiteSpace(result) && process.ExitCode != 0)
-        {
-            var error = await process.StandardError.ReadToEndAsync();
-            process.StandardError.Close();
-            throw new TransformException(error);
-        }
-        return result;
     }
 }
