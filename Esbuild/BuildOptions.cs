@@ -5,7 +5,7 @@ public class BuildOptions : CommonOptions
     /// <summary>
     /// Documentation: https://esbuild.github.io/api/#bundl
     /// </summary>
-    public bool Bundle { get; set; } = false;
+    public bool Bundle { get; set; }
 
     public override IEnumerable<string> ToArguments()
     {
