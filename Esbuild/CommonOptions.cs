@@ -103,6 +103,11 @@ public class CommonOptions
             result.Add($"--jsx-fragment={JsxFragment}");
         }
 
+        if (JsxImportSource != default)
+        {
+            result.Add($"--jsx-import-source={JsxImportSource}");
+        }
+
         if (JsxSideEffects)
         {
             result.Add($"--jsx-side-effects");
