@@ -80,12 +80,12 @@ public class CommonOptions
 
         if (Charset != default)
         {
-            result.Add($"--charset='{Charset?.GetDescription()}'");
+            result.Add($"--charset={Charset?.GetDescription()}");
         }
 
         if (Jsx != default)
         {
-            result.Add($"--jsx='{Jsx.GetDescription()}'");
+            result.Add($"--jsx={Jsx.GetDescription()}");
         }
 
         if (JsxDev)
@@ -95,12 +95,12 @@ public class CommonOptions
 
         if (JsxFactory != default)
         {
-            result.Add($"--jsx-factory='{JsxFactory}'");
+            result.Add($"--jsx-factory={JsxFactory}");
         }
 
         if (JsxFragment != default)
         {
-            result.Add($"--jsx-fragment='{JsxFragment}'");
+            result.Add($"--jsx-fragment={JsxFragment}");
         }
 
         if (JsxSideEffects)
@@ -111,7 +111,7 @@ public class CommonOptions
         if (Target != default)
         {
             var value = string.Join(',', Enum.GetValues<Target>().Where(w => Target!.Value.HasFlag(w)));
-            result.Add($"--target='{value}'");
+            result.Add($"--target={value}");
         }
 
         return result;
