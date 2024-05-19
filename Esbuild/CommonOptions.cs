@@ -57,7 +57,7 @@ public class CommonOptions
     /// <summary>
     /// Documentation: https://esbuild.github.io/api/#target
     /// </summary>
-    public Target? Target { get; set; }
+    public string[]? Target { get; set; }
 
     public virtual IEnumerable<string> ToArguments()
     {
@@ -110,7 +110,7 @@ public class CommonOptions
 
         if (Target != default)
         {
-            var value = string.Join(',', Enum.GetValues<Target>().Where(w => Target!.Value.HasFlag(w)));
+            var value = string.Join(',', Target);
             result.Add($"--target={value}");
         }
 
@@ -126,32 +126,6 @@ public enum Jsx
     Preserve,
     [Description("automatic")]
     Automatic
-}
-
-public enum Target : long
-{
-    [Description("chrome")]
-    Chrome = 0x1,
-    [Description("deno")]
-    Deno = 0x10,
-    [Description("edge")]
-    Edge = 0x100,
-    [Description("firefox")]
-    Firefox = 0x1000,
-    [Description("hermes")]
-    Hermes = 0x10000,
-    [Description("ie")]
-    Ie = 0x100000,
-    [Description("ios")]
-    Ios = 0x1000000,
-    [Description("node")]
-    Node = 0x10000000,
-    [Description("opera")]
-    Opera = 0x100000000,
-    [Description("rhino")]
-    Rhino = 0x1000000000,
-    [Description("safari")]
-    Safari = 0x10000000000
 }
 
 public enum Format
