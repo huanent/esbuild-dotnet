@@ -27,7 +27,7 @@ public static class Bundler
         bin = Path.Combine(AppContext.BaseDirectory, "runtimes", rid, "native", binFileName);
         if (!File.Exists(bin))
         {
-            throw new ExecutableNotFoundException();
+            throw new ExecutableNotFoundException(rid);
         }
     }
 
